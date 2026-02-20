@@ -48,15 +48,7 @@ const Hero = ({ scrollToCatalog }) => {
       </AnimatePresence>
       
       {/* Gradient Overlay for Text Readability */}
-      <div 
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(90deg, rgba(250, 247, 242, 0.85) 0%, rgba(250, 247, 242, 0.85) 45%, rgba(250, 247, 242, 0.4) 80%, rgba(250, 247, 242, 0) 100%)',
-          zIndex: 1,
-          pointerEvents: 'none',
-        }} 
-      />
+      <div className="hero-overlay" />
       
       <div style={{ position: 'relative', zIndex: 2 }}>
         <motion.div
@@ -88,7 +80,6 @@ const Hero = ({ scrollToCatalog }) => {
             </a>
             <button
               className="btn btn-secondary"
-              style={{ marginLeft: 6 }}
               onClick={scrollToCatalog}
             >
               View Catalog
