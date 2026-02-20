@@ -27,14 +27,14 @@ const Footer = ({ onCategoryClick }) => {
             <ul>
               <li><a href="tel:09837509304">Call Us</a></li>
               <li><a href="https://maps.app.goo.gl/tE9zCZgo7am5Jm1p9" target="_blank" rel="noopener noreferrer">Directions</a></li>
-              <li><a href="mailto:hardikstore@example.com?subject=Feedback">Feedback</a></li>
+              <li><a href="mailto:tyagiaadesh298@gmail.com?subject=Feedback">Feedback</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Hardik General Store, Hapur</span>
-        <span>Taga Sarai, Uttar Pradesh</span>
+        <span>Taga Sarai, Hapur, Uttar Pradesh</span>
       </div>
     </footer>
   );
