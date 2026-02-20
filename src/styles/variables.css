@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --bg:          #faf7f2;
+  --bg-alt:      #f3ede3;
+  --surface:     #ffffff;
+  --border:      #e8e0d4;
+  --border-dark: #c9bfb0;
+
+  --saffron:     #e05c00;
+  --saffron-lt:  #fff0e8;
+  --saffron-mid: #ffd4b8;
+  --green:       #1a7a3c;
+  --green-lt:    #e8f5ee;
+  --gold:        #b8860b;
+
+  --ink:         #1a1612;
+  --ink-2:       #4a3f35;
+  --ink-3:       #8a7d72;
+  --ink-4:       #c0b5a8;
+
+  --serif:       'Lora', Georgia, serif;
+  --sans:        'DM Sans', system-ui, sans-serif;
+  --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  20px;
+}
