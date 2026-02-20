@@ -31,12 +31,6 @@ const ProductCard = ({ product }) => {
 
     <div className="card-actions">
       <span className="card-price" style={{ fontSize: '15px' }}>Best Market Price</span>
-      <a href={`tel:09837509304`} className="card-btn">
-        <span className="btn-text">Order</span>
-        <div className="btn-icon">
-          <Plus size={14} strokeWidth={3} />
-        </div>
-      </a>
     </div>
   </motion.div>
   );

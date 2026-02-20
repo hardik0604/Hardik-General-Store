@@ -14,7 +14,7 @@ const Navbar = () => {
           </a>
           <a className="nav-map" href="https://maps.app.goo.gl/tE9zCZgo7am5Jm1p9" target="_blank" rel="noopener noreferrer">
             <Navigation size={14} strokeWidth={2} />
-            Directions
+            <span>Directions</span>
           </a>
         </div>
       </div>
