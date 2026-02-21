@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import { ArrowUp } from 'lucide-react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
-import Catalog from './components/catalog/Catalog';
 import Footer from './components/layout/Footer';
+
+const Catalog = React.lazy(() => import('./components/catalog/Catalog'));
 import { useProducts } from './hooks/useProducts';
 
 // Import Styles
@@ -17,16 +18,18 @@ export default function App() {
   const [showBackToTop, setShowBackToTop] = React.useState(false);
 
   React.useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      // Show button when page is scrolled down 300px
-      if (window.scrollY > 300) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowBackToTop(window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -64,13 +67,15 @@ export default function App() {
       <Navbar />
       <Hero scrollToCatalog={scrollToCatalog} />
       <main>
-        <Catalog 
-          ref={catalogRef}
-          categories={categories} 
-          activeCategory={activeCategory} 
-          onCategoryChange={handleCategoryChange} 
-          filteredProducts={filteredProducts}
-        />
+        <Suspense fallback={<div style={{ minHeight: '800px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading Catalog...</div>}>
+          <Catalog 
+            ref={catalogRef}
+            categories={categories} 
+            activeCategory={activeCategory} 
+            onCategoryChange={handleCategoryChange} 
+            filteredProducts={filteredProducts}
+          />
+        </Suspense>
       </main>
       <Footer onCategoryClick={handleCategoryChange} />
 

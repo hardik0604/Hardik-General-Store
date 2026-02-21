@@ -5,16 +5,22 @@ import { Clock, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 const easeExpo = [0.16, 1, 0.3, 1];
 
 const IMAGES = [
-  "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1920&h=640&auto=format&fit=crop", // Vibrant Spices (3:1)
-  "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=80&w=1920&h=640&auto=format&fit=crop", // Stationery (New)
-  "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=1920&h=640&auto=format&fit=crop", // Chocolates (New)
-  "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1920&h=640&auto=format&fit=crop"  // Cold Drinks (3:1)
+  "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=60&w=1280&h=426&auto=format&fit=crop", // Vibrant Spices (3:1)
+  "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=60&w=1280&h=426&auto=format&fit=crop", // Stationery (New)
+  "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=60&w=1280&h=426&auto=format&fit=crop", // Chocolates (New)
+  "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=60&w=1280&h=426&auto=format&fit=crop"  // Cold Drinks (3:1)
 ];
 
 const Hero = ({ scrollToCatalog }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    // Preload images to avoid lag spikes during rotation
+    IMAGES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % IMAGES.length);
     }, 5000);
@@ -44,6 +50,8 @@ const Hero = ({ scrollToCatalog }) => {
             pointerEvents: 'none',
           }}
           alt="Product Showcase"
+          fetchPriority={index === 0 ? "high" : "auto"}
+          decoding="async"
         />
       </AnimatePresence>
       
