@@ -96,10 +96,31 @@
 }
 
 /* ── HERO ── */
+/* Hero band: ensure image fills container and is visible on all screens */
 .hero-band {
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
   min-height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make hero image fill container and keep important content visible */
+.hero-band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .hero-band img {
+    object-fit: cover;
+    object-position: 50% 40%; /* Focus slightly lower for mobile */
+    min-height: 320px;
+    max-height: 420px;
+  }
 }
 /* Desktop overlay */
 .hero-overlay {
@@ -515,21 +536,17 @@ footer {
     flex-direction: column;
     gap: 24px;
   }
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  .grid > :nth-child(odd):last-child {
-    grid-column: 1 / -1;
-    text-align: center;
-    align-items: center;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
-  .grid > :nth-child(odd):last-child .card-top {
+  .card {
+    margin-bottom: 8px;
+  }
+  .card-top, .card-content, .card-actions {
     width: 100%;
     justify-content: center;
-    gap: 12px;
-  }
-  .grid > :nth-child(odd):last-child .card-content {
     align-items: center;
-  }
-  .grid > :nth-child(odd):last-child .card-actions {
-    align-items: center;
+    gap: 8px;
   }
 }
