@@ -24,24 +24,6 @@ const ProductCard = ({ product }) => {
       </div>
     </div>
 
-    {/* Responsive Product Image */}
-    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 120 }}>
-      <picture>
-        {/* Example: If you add AVIF/WebP versions, update these fields in your product data */}
-        {/* {product.imageAvif && <source srcSet={product.imageAvif} type="image/avif" />} */}
-        {/* {product.imageWebp && <source srcSet={product.imageWebp} type="image/webp" />} */}
-        <img
-          src={product.image || '/vite.svg'}
-          srcSet={product.imageSmall ? `${product.imageSmall} 320w, ${product.image} 640w` : undefined}
-          sizes="(max-width: 640px) 100vw, 320px"
-          alt={product.name}
-          loading="lazy"
-          width={160}
-          height={160}
-          style={{ objectFit: 'cover', width: 120, height: 120, borderRadius: 12, background: '#f5f5f7' }}
-        />
-      </picture>
-    </div>
 
     <div className="card-content">
       <h3 className="card-name">{product.name}</h3>
