@@ -26,9 +26,15 @@
     <link
       rel="preload"
       as="image"
+      media="(max-width: 640px)"
+      href="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      media="(min-width: 641px)"
       href="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop"
-      imagesrcset="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop 480w, https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop 1280w"
-      imagesizes="100vw"
       fetchpriority="high"
     />
   </head>
@@ -66,14 +72,16 @@
       </style>
       <div class="skel-nav"></div>
       <div class="skel-hero">
-        <img
-          src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop"
-          srcset="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop 480w, https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop 1280w"
-          sizes="100vw"
-          fetchpriority="high"
-          decoding="async"
-          alt=""
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcset="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop" />
+          <source media="(min-width: 641px)" srcset="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop" />
+          <img
+            src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop"
+            fetchpriority="high"
+            decoding="async"
+            alt=""
+          />
+        </picture>
         <div class="skel-overlay"></div>
       </div>
     </div>

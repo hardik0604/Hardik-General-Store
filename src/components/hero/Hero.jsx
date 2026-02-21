@@ -6,20 +6,20 @@ const easeExpo = [0.16, 1, 0.3, 1];
 
 const IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcSet: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop 480w, https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop 1280w"
+    srcDesktop: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop",
+    srcMobile: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop"
   },
   {
-    src: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcSet: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=40&w=480&h=320&fit=crop 480w, https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=60&w=1280&h=426&fit=crop 1280w"
+    srcDesktop: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=60&w=1280&h=426&fit=crop",
+    srcMobile: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=40&w=480&h=320&fit=crop"
   },
   {
-    src: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcSet: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=40&w=480&h=320&fit=crop 480w, https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=60&w=1280&h=426&fit=crop 1280w"
+    srcDesktop: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=60&w=1280&h=426&fit=crop",
+    srcMobile: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=40&w=480&h=320&fit=crop"
   },
   {
-    src: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcSet: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=40&w=480&h=320&fit=crop 480w, https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=60&w=1280&h=426&fit=crop 1280w"
+    srcDesktop: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=60&w=1280&h=426&fit=crop",
+    srcMobile: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=40&w=480&h=320&fit=crop"
   }
 ];
 
@@ -29,9 +29,10 @@ const Hero = ({ scrollToCatalog }) => {
   useEffect(() => {
     // Preload images to avoid lag spikes during rotation
     IMAGES.forEach((imgObj) => {
-      const img = new Image();
-      img.src = imgObj.src;
-      img.srcset = imgObj.srcSet;
+      const imgD = new Image();
+      imgD.src = imgObj.srcDesktop;
+      const imgM = new Image();
+      imgM.src = imgObj.srcMobile;
     });
 
     const timer = setInterval(() => {
@@ -59,13 +60,10 @@ const Hero = ({ scrollToCatalog }) => {
             pointerEvents: 'none',
           }}
         >
-          {/* Example: If you add AVIF/WebP versions locally, update these paths */}
-          {/* <source srcSet={IMAGES[index].srcAvif} type="image/avif" /> */}
-          {/* <source srcSet={IMAGES[index].srcWebp} type="image/webp" /> */}
+          <source media="(max-width: 640px)" srcSet={IMAGES[index].srcMobile} />
+          <source media="(min-width: 641px)" srcSet={IMAGES[index].srcDesktop} />
           <img
-            src={IMAGES[index].src}
-            srcSet={IMAGES[index].srcSet}
-            sizes="100vw"
+            src={IMAGES[index].srcDesktop}
             crossOrigin="anonymous"
             alt="Product Showcase"
             fetchPriority={index === 0 ? "high" : "auto"}
