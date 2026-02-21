@@ -4,23 +4,20 @@ import { Clock, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 
 const easeExpo = [0.16, 1, 0.3, 1];
 
+import img1m from '../../assets/hero/1-m.webp';
+import img1d from '../../assets/hero/1-d.webp';
+import img2m from '../../assets/hero/2-m.webp';
+import img2d from '../../assets/hero/2-d.webp';
+import img3m from '../../assets/hero/3-m.webp';
+import img3d from '../../assets/hero/3-d.webp';
+import img4m from '../../assets/hero/4-m.webp';
+import img4d from '../../assets/hero/4-d.webp';
+
 const IMAGES = [
-  {
-    srcDesktop: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcMobile: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?fm=webp&q=40&w=480&h=320&fit=crop"
-  },
-  {
-    srcDesktop: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcMobile: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?fm=webp&q=40&w=480&h=320&fit=crop"
-  },
-  {
-    srcDesktop: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcMobile: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?fm=webp&q=40&w=480&h=320&fit=crop"
-  },
-  {
-    srcDesktop: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=60&w=1280&h=426&fit=crop",
-    srcMobile: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=webp&q=40&w=480&h=320&fit=crop"
-  }
+  { srcDesktop: img1d, srcMobile: img1m },
+  { srcDesktop: img2d, srcMobile: img2m },
+  { srcDesktop: img3d, srcMobile: img3m },
+  { srcDesktop: img4d, srcMobile: img4m }
 ];
 
 const Hero = ({ scrollToCatalog }) => {
