@@ -5,10 +5,22 @@ import { Clock, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 const easeExpo = [0.16, 1, 0.3, 1];
 
 const IMAGES = [
-  "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=60&w=1280&h=426&auto=format&fit=crop", // Vibrant Spices (3:1)
-  "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=60&w=1280&h=426&auto=format&fit=crop", // Stationery (New)
-  "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=60&w=1280&h=426&auto=format&fit=crop", // Chocolates (New)
-  "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=60&w=1280&h=426&auto=format&fit=crop"  // Cold Drinks (3:1)
+  {
+    src: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=60&w=1280&h=426&auto=format&fit=crop",
+    srcSet: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=50&w=600&h=400&auto=format&fit=crop 600w, https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=60&w=1280&h=426&auto=format&fit=crop 1280w"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=60&w=1280&h=426&auto=format&fit=crop",
+    srcSet: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=50&w=600&h=400&auto=format&fit=crop 600w, https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=60&w=1280&h=426&auto=format&fit=crop 1280w"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=60&w=1280&h=426&auto=format&fit=crop",
+    srcSet: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=50&w=600&h=400&auto=format&fit=crop 600w, https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=60&w=1280&h=426&auto=format&fit=crop 1280w"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=60&w=1280&h=426&auto=format&fit=crop",
+    srcSet: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=50&w=600&h=400&auto=format&fit=crop 600w, https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=60&w=1280&h=426&auto=format&fit=crop 1280w"
+  }
 ];
 
 const Hero = ({ scrollToCatalog }) => {
@@ -16,9 +28,10 @@ const Hero = ({ scrollToCatalog }) => {
 
   useEffect(() => {
     // Preload images to avoid lag spikes during rotation
-    IMAGES.forEach((src) => {
+    IMAGES.forEach((imgObj) => {
       const img = new Image();
-      img.src = src;
+      img.src = imgObj.src;
+      img.srcset = imgObj.srcSet;
     });
 
     const timer = setInterval(() => {
@@ -32,7 +45,9 @@ const Hero = ({ scrollToCatalog }) => {
       <AnimatePresence mode="sync">
         <motion.img
           key={index}
-          src={IMAGES[index]}
+          src={IMAGES[index].src}
+          srcSet={IMAGES[index].srcSet}
+          sizes="100vw"
           crossOrigin="anonymous"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
