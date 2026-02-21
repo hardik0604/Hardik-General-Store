@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
 import Footer from './components/layout/Footer';
 import { useProducts } from './hooks/useProducts';
+import { LazyMotion, domAnimation } from 'framer-motion';
 import './styles/variables.css';
 import './styles/base.css';
 import './styles/layout.css';
@@ -50,7 +51,7 @@ export default function App() {
   }, [setActiveCategory, scrollToCatalog]);
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <Navbar />
       <Hero scrollToCatalog={scrollToCatalog} />
       <main>
@@ -77,6 +78,6 @@ export default function App() {
         </button>
       )}
       {/* Add .back-to-top styles to your CSS for maintainability */}
-    </>
+    </LazyMotion>
   );
 }

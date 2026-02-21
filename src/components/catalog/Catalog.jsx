@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import CategoryTabs from './CategoryTabs';
 import ProductGrid from './ProductGrid';
 const Catalog = React.forwardRef(({ categories, activeCategory, onCategoryChange, filteredProducts }, ref) => {
