@@ -471,7 +471,7 @@ footer {
 }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-col a { font-size: 13px; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 140ms; }
-.footer-col a:hover { color: #fff; }
+  .hero-h1, .hero-sub {
 .footer-bottom {
   max-width: 1000px; margin: 40px auto 0; padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.1);

@@ -43,12 +43,8 @@ const Hero = ({ scrollToCatalog }) => {
   return (
     <div className="hero-band" style={{ position: 'relative', overflow: 'hidden', minHeight: '440px' }}>
       <AnimatePresence mode="sync">
-        <motion.img
+        <motion.picture
           key={index}
-          src={IMAGES[index].src}
-          srcSet={IMAGES[index].srcSet}
-          sizes="100vw"
-          crossOrigin="anonymous"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -59,15 +55,30 @@ const Hero = ({ scrollToCatalog }) => {
             left: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center',
             zIndex: 0,
             pointerEvents: 'none',
           }}
-          alt="Product Showcase"
-          fetchPriority={index === 0 ? "high" : "auto"}
-          decoding="async"
-        />
+        >
+          {/* Example: If you add AVIF/WebP versions locally, update these paths */}
+          {/* <source srcSet={IMAGES[index].srcAvif} type="image/avif" /> */}
+          {/* <source srcSet={IMAGES[index].srcWebp} type="image/webp" /> */}
+          <img
+            src={IMAGES[index].src}
+            srcSet={IMAGES[index].srcSet}
+            sizes="100vw"
+            crossOrigin="anonymous"
+            alt="Product Showcase"
+            fetchPriority={index === 0 ? "high" : "auto"}
+            decoding="async"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              display: 'block',
+            }}
+          />
+        </motion.picture>
       </AnimatePresence>
       
       {/* Gradient Overlay for Text Readability */}
