@@ -17,7 +17,11 @@ const ProductCard = ({ product }) => {
       whileHover={{ y: -6, boxShadow: "0 20px 40px -8px rgba(0, 0, 0, 0.12)" }}
     >
     <div className="card-top">
-      {/* Intentionally removed category/rating for absolute minimalism */}
+      <span className="card-cat">{product.category}</span>
+      <div className="card-rating">
+        <Star size={10} fill="currentColor" strokeWidth={0} />
+        <span>{product.rating}</span>
+      </div>
     </div>
 
 
@@ -27,10 +31,7 @@ const ProductCard = ({ product }) => {
     </div>
 
     <div className="card-actions">
-      <span className="card-price" style={{ fontSize: '14px', color: 'var(--ink-2)', fontWeight: 400 }}>{product.price || 'Everyday Fair Price'}</span>
-      <div style={{color: '#0066cc', fontSize: '14px', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '4px'}}>
-        Buy <Plus size={14} />
-      </div>
+      <span className="card-price" style={{ fontSize: '14px', color: 'var(--ink-3)', fontWeight: 500 }}>Everyday Fair Price</span>
     </div>
   </motion.div>
   );

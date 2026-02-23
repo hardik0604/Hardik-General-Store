@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { m as motion, AnimatePresence } from 'framer-motion';
-import { Clock, MapPin, Phone, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { Clock, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 
 const easeExpo = [0.16, 1, 0.3, 1];
 
@@ -101,15 +101,34 @@ const Hero = ({ scrollToCatalog }) => {
           </p>
 
           <div className="hero-ctas">
+            <a href="https://maps.app.goo.gl/tE9zCZgo7am5Jm1p9" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Visit Us Today <ArrowUpRight size={15} />
+            </a>
+            <a href="tel:09837509304" className="btn btn-secondary">
+              <Phone size={14} strokeWidth={2} /> 098375 09304
+            </a>
             <button
-              className="btn btn-primary"
+              className="btn btn-secondary"
               onClick={scrollToCatalog}
             >
-              Order Groceries
+              Browse Our Aisles
             </button>
-            <a href="https://maps.app.goo.gl/tE9zCZgo7am5Jm1p9" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              Visit the Store <ChevronRight size={18} />
-            </a>
+          </div>
+
+          <div className="meta-strip">
+            {[
+              { icon: <Clock size={17} strokeWidth={2} />,  label: 'Hours',   value: '6:00 AM – 9:00 PM' },
+              { icon: <MapPin size={17} strokeWidth={2} />, label: 'Address', value: 'Circular Rd, Taga Sarai, Hapur' },
+              { icon: <Phone size={17} strokeWidth={2} />,  label: 'Phone',   value: '098375 09304' },
+            ].map(({ icon, label, value }) => (
+              <div key={label} className="meta-item">
+                <span className="meta-ico">{icon}</span>
+                <div>
+                  <div className="meta-lbl">{label}</div>
+                  <div className="meta-val">{value}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
