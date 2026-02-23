@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <div className="nav-inner">
-        <Logo />
+        <Logo lightText={true} />
         <div className="nav-right">
           <a className="nav-phone" href="tel:09837509304" aria-label="Call Store">
             <Phone size={14} strokeWidth={2} aria-hidden="true" />
