@@ -1,8 +1,8 @@
 /* ── NAV ── */
 @media (max-width: 900px) {
   .nav-inner { padding: 0 12px; }
-  .hero { padding: 32px 10px 40px; }
-  main { padding: 24px 6px 60px; }
+  .hero { padding: 48px 10px 60px; }
+  main { padding: 36px 6px 80px; }
   .footer-inner { flex-direction: column; gap: 32px; }
   .footer-links { flex-direction: column; gap: 24px; }
   .catalog-sticky-bar { padding: 12px; border-radius: 10px; margin-bottom: 16px; }
@@ -142,7 +142,7 @@
   }
 }
 .hero {
-  max-width: 1000px; margin: 0 auto; padding: 64px 28px 72px;
+  max-width: 1000px; margin: 0 auto; padding: 90px 28px 100px;
 }
 
 .eyebrow {
@@ -233,7 +233,7 @@
   border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden;
   background: var(--bg-alt);
   position: relative;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 .meta-item {
   display: flex; align-items: center; gap: 12px;
@@ -246,7 +246,7 @@
 .meta-val { font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.35; }
 
 /* ── MAIN ── */
-main { max-width: 1000px; margin: 0 auto; padding: 52px 28px 100px; }
+main { max-width: 1000px; margin: 0 auto; padding: 80px 28px 120px; }
 
 /* ── CATALOG HEADER ── */
 /* ─── CATALOG HEADER ─── */
@@ -325,16 +325,15 @@ main { max-width: 1000px; margin: 0 auto; padding: 52px 28px 100px; }
 /* ── PRODUCT GRID ── */
 /* ─── PRODUCT GRID ─── */
 .grid-wrap { 
-  border: 1px solid var(--border); 
-  border-radius: var(--r-lg); 
-  overflow: hidden; 
-  background: var(--bg); /* Gap color */
+  border: none; 
+  background: transparent; 
+  overflow: visible; 
 }
 .grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-  gap: 1px; 
-  background: var(--border); 
+  gap: 20px; 
+  background: transparent; 
 }
 
 .card {
@@ -344,9 +343,11 @@ main { max-width: 1000px; margin: 0 auto; padding: 52px 28px 100px; }
   flex-direction: column; 
   gap: 16px;
   cursor: default; 
-  transition: z-index 0s;
   position: relative;
   height: 100%;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .card:hover {
@@ -490,7 +491,7 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .nav-inner { padding: 0 16px; }
-  .hero { padding: 40px 16px 48px; }
+  .hero { padding: 56px 16px 64px; }
   .hero-overlay {
     background: linear-gradient(180deg, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.92) 55%, rgba(250, 247, 242, 0.6) 80%, rgba(250, 247, 242, 0.2) 100%);
   }
@@ -502,7 +503,7 @@ footer {
     width: 100%;
     justify-content: center;
   }
-  main { padding: 32px 14px 80px; }
+  main { padding: 48px 14px 100px; }
   footer { padding: 40px 16px; }
   
   .catalog-sticky-bar {

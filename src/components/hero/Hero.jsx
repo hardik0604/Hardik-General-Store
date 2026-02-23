@@ -88,21 +88,21 @@ const Hero = ({ scrollToCatalog }) => {
         >
           <div className="eyebrow">
             <span className="pulse-dot" aria-hidden="true" />
-            Open Now · 6 AM – 9 PM Daily
+            Family-run & Locally Loved · Open 6 AM – 9 PM Daily
           </div>
 
           <h1 className="hero-h1">
-            Hapur's trusted store<br />for <em>everything you need.</em>
+            Welcome to Hardik General Store,<br /><em>your neighborhood pantry.</em>
           </h1>
 
           <p className="hero-sub">
-            Fresh groceries, snacks, dairy, spices, cooking essentials and stationery
-            — all under one roof at Circular Road, Taga Sarai.
+            From fresh daily dairy to your favorite snacks and morning staples, 
+            we've been proudly serving the Taga Sarai community with a smile.
           </p>
 
           <div className="hero-ctas">
             <a href="https://maps.app.goo.gl/tE9zCZgo7am5Jm1p9" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Get Directions <ArrowUpRight size={15} />
+              Visit Us Today <ArrowUpRight size={15} />
             </a>
             <a href="tel:09837509304" className="btn btn-secondary">
               <Phone size={14} strokeWidth={2} /> 098375 09304
@@ -111,7 +111,7 @@ const Hero = ({ scrollToCatalog }) => {
               className="btn btn-secondary"
               onClick={scrollToCatalog}
             >
-              View Catalog
+              Browse Our Aisles
             </button>
           </div>
 

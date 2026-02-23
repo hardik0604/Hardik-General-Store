@@ -24,9 +24,9 @@ const Catalog = React.forwardRef(({ categories, activeCategory, onCategoryChange
     <section id="catalog" ref={resolvedRef}>
       <div className="catalog-sticky-bar">
         <div className="cat-header-row">
-          <h2 className="cat-title">{activeCategory === 'All' ? 'Featured Products' : activeCategory}</h2>
+          <h2 className="cat-title">{activeCategory === 'All' ? 'Handpicked for You' : activeCategory}</h2>
           <span className="cat-count">
-            {activeCategory === 'All' ? 'Best pick per category' : `${filteredProducts.length} items`}
+            {activeCategory === 'All' ? 'Our favorite staples and daily essentials' : `${filteredProducts.length} items`}
           </span>
         </div>
 

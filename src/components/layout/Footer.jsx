@@ -7,7 +7,7 @@ const Footer = ({ onCategoryClick }) => {
       <div className="footer-inner">
         <div className="footer-brand">
           <Logo />
-          <p>Serving the Hapur community with quality products and fair prices since day one.</p>
+          <p>More than just a store — we're part of the neighborhood. Proudly family-owned and serving the Hapur community with a smile.</p>
         </div>
         <div className="footer-links">
           <div className="footer-col">
@@ -33,8 +33,8 @@ const Footer = ({ onCategoryClick }) => {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Hardik General Store, Hapur</span>
-        <span>Taga Sarai, Hapur, Uttar Pradesh</span>
+        <span>Made with ♥ for Hapur. © {new Date().getFullYear()} Hardik General Store.</span>
+        <span>Circular Road, Taga Sarai, Hapur, Uttar Pradesh</span>
       </div>
     </footer>
   );

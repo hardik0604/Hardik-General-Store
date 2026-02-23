@@ -1,9 +1,9 @@
 :root {
-  --bg:          #faf7f2;
-  --bg-alt:      #f3ede3;
+  --bg:          #f3eee4;
+  --bg-alt:      #e9e1d3;
   --surface:     #ffffff;
-  --border:      #e8e0d4;
-  --border-dark: #c9bfb0;
+  --border:      #dfd4c1;
+  --border-dark: #bbaea1;
 
   --saffron:     #e05c00;
   --saffron-lt:  #fff0e8;

@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
       layout
       variants={item}
       className="card"
-      whileHover={{ y: -4, boxShadow: "0 12px 32px -8px rgba(0, 0, 0, 0.08)" }}
+      whileHover={{ y: -6, boxShadow: "0 20px 40px -8px rgba(0, 0, 0, 0.12)" }}
     >
     <div className="card-top">
       <span className="card-cat">{product.category}</span>
@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
     </div>
 
     <div className="card-actions">
-      <span className="card-price" style={{ fontSize: '15px' }}>Best Market Price</span>
+      <span className="card-price" style={{ fontSize: '14px', color: 'var(--ink-3)', fontWeight: 500 }}>Everyday Fair Price</span>
     </div>
   </motion.div>
   );

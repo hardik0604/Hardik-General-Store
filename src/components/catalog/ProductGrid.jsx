@@ -18,7 +18,8 @@ const ProductGrid = ({ products }) => {
       className="grid"
       variants={container}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: true, margin: "100px" }}
     >
       {products.map(item => (
         <ProductCard key={item.id} product={item} />
