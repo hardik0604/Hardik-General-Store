@@ -1,0 +1,43 @@
+
+> hardik-general-store@0.0.0 lint
+> eslint .
+
+
+C:\Users\praka\Downloads\Hardik General Store\src\components\catalog\Catalog.jsx
+  2:15  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\praka\Downloads\Hardik General Store\src\components\catalog\ProductCard.jsx
+  3:15  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\praka\Downloads\Hardik General Store\src\components\catalog\ProductGrid.jsx
+  2:15  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\praka\Downloads\Hardik General Store\src\components\effects\HoliOverlay.jsx
+  27:5  warning  Compilation Skipped: Inline `class` declarations are not supported
+
+Move class declarations outside of components/hooks.
+
+  25 |     resizeCanvas();
+  26 |
+> 27 |     class Particle {
+     |     ^^^^^^^^^^^^^^^^
+> 28 |       constructor(x, y) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         this.x = x;
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 60 |       }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 61 |     }
+     | ^^^^^^ Inline `class` declarations are not supported
+  62 |
+  63 |     const createBurst = (x, y) => {
+  64 |       for (let i = 0; i < 40; i++) {
+
+  react-hooks/unsupported-syntax
+
+C:\Users\praka\Downloads\Hardik General Store\src\components\hero\Hero.jsx
+  2:15  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 5 problems (4 errors, 1 warning)
+

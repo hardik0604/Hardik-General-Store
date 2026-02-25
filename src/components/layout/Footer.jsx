@@ -6,7 +6,7 @@ const Footer = ({ onCategoryClick }) => {
     <footer>
       <div className="footer-inner">
         <div className="footer-brand">
-          <Logo />
+          <Logo inverse={true} />
           <p>More than just a store — we're part of the neighborhood. Proudly family-owned and serving the Hapur community with a smile.</p>
         </div>
         <div className="footer-links">

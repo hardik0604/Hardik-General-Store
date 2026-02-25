@@ -18,6 +18,56 @@
 
 
 /* Restore .nav, .nav-inner, .nav-right outside media queries */
+/* ── TOP BANNER ── */
+.top-banner {
+  background: linear-gradient(90deg, #FF1E56, #FF9F1C, #06D6A0);
+  background-size: 200% 100%;
+  animation: bannerGradient 5s ease infinite;
+  color: #fff;
+  padding: 10px 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 101; /* Above sticky nav just in case */
+}
+
+@keyframes bannerGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.top-banner span {
+  text-align: center;
+  margin-right: 28px; /* space for the close button */
+}
+
+.top-banner-close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.top-banner-close:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .nav {
   position: sticky;
   top: 0;
@@ -126,16 +176,38 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.85) 45%, rgba(250, 247, 242, 0.4) 80%, rgba(250, 247, 242, 0) 100%);
+  /* Vibrant Holi Gradient for Text Readability */
+  background: linear-gradient(
+    45deg, 
+    rgba(255, 154, 158, 0.9) 0%,   /* Light Pink */
+    rgba(254, 203, 239, 0.85) 40%, /* Light Purple */
+    rgba(252, 203, 144, 0.5) 80%,  /* Light Orange */
+    rgba(143, 211, 244, 0) 100%    /* Light Cyan transparent */
+  );
+  background-size: 300% 300%;
+  animation: heroGradientAnim 12s ease infinite;
   z-index: 1;
   pointer-events: none;
 }
 
+@keyframes heroGradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @media (max-width: 640px) {
   .hero-overlay {
-    /* Stronger dark overlay for mobile for better image visibility */
-    background: linear-gradient(180deg, rgba(30, 30, 30, 0.38) 0%, rgba(250, 247, 242, 0.92) 55%, rgba(250, 247, 242, 0.6) 80%, rgba(250, 247, 242, 0.2) 100%),
-                linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.10) 100%);
+    /* Stronger vibrant overlay for mobile for better image visibility */
+    background: linear-gradient(
+      180deg, 
+      rgba(255, 154, 158, 0.4) 0%, 
+      rgba(254, 203, 239, 0.85) 55%, 
+      rgba(252, 203, 144, 0.95) 80%, 
+      rgba(143, 211, 244, 0.8) 100%
+    );
+    background-size: 300% 300%;
+    animation: heroGradientAnim 12s ease infinite;
   }
   .hero-h1, .hero-sub {
     text-shadow: 0 2px 12px rgba(0,0,0,0.18), 0 1px 2px rgba(0,0,0,0.10);
@@ -199,9 +271,37 @@
   font-family: var(--serif);
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 600; line-height: 1.15; letter-spacing: -0.01em;
-  color: var(--ink); margin-bottom: 16px;
+  margin-bottom: 16px;
+  
+  /* Vibrant Holi Text Gradient */
+  background: linear-gradient(
+    -45deg, 
+    #FF1E56, /* Deep Pink */
+    #FF9F1C, /* Orange */
+    #E71D36, /* Red */
+    #118AB2, /* Blue */
+    #06D6A0  /* Teal */
+  );
+  background-size: 300% 300%;
+  animation: heroTextGradientAnim 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
-.hero-h1 em { font-style: italic; color: var(--saffron); font-weight: 400; }
+
+@keyframes heroTextGradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-h1 em { 
+  font-style: italic; 
+  font-weight: 400; 
+  color: var(--saffron);
+  -webkit-text-fill-color: var(--saffron); /* Restore solid color for 'your neighborhood pantry.' */
+}
 
 .hero-sub {
   font-size: 1rem;
