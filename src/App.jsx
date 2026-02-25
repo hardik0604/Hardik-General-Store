@@ -4,7 +4,6 @@ import { ArrowUp, X } from 'lucide-react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
 import Footer from './components/layout/Footer';
-import HoliOverlay from './components/effects/HoliOverlay';
 import { useProducts } from './hooks/useProducts';
 import { LazyMotion, domAnimation } from 'framer-motion';
 import './styles/variables.css';
@@ -54,7 +53,6 @@ export default function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <HoliOverlay />
       {showBanner && (
         <div className="top-banner">
           <span>🌈 Holi Colours and Gulaal are available!</span>
